@@ -240,7 +240,7 @@ class EquipmentItem with ChangeNotifier {
       this.equipmentId});
 }
 
-final List<EquipmentItem> _equipments = [
+final List<EquipmentItem> equipments = [
   EquipmentItem(
     title: "Shure SM58 Wired",
     equipmentId: 'eId01',

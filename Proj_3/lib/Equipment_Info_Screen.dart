@@ -1,0 +1,1 @@
+//This will be displayed after clicking on any equipment
