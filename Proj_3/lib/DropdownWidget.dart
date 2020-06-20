@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './DATA.dart';
 
 class DropdownWidget extends StatefulWidget {
   @override
@@ -6,18 +7,22 @@ class DropdownWidget extends StatefulWidget {
 }
 
 class _DropdownWidgetState extends State<DropdownWidget> {
-  String dropdownValue="One";
+  List<String> menuItems=[];
+  void initState(){
+    for (int i=0;i<Categories.length;i++)
+    {
+      menuItems.add(Categories[i].title);
+      //print(menuItems);
+    }
+    super.initState();
+    }
+
+
+  String dropdownValue="All";
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: <Widget>[
-        Container(
-          margin: EdgeInsets.all(10),
-          child: Icon(Icons.dashboard),
-        ),
-        SizedBox(width: 2,),
-        Container(
-          width: 300,
+    return Container(
+          //width: double.infinity,
           child: DropdownButton<String>(
                 value: dropdownValue,
                 icon: Icon(Icons.arrow_downward),
@@ -35,19 +40,17 @@ class _DropdownWidgetState extends State<DropdownWidget> {
                     dropdownValue = newValue;
                   });
                 },
-                items: <String>['One', 'Two', 'Free', 'Four',"qwertyuiopvhjbvshkdsbvsd"]
+                items: menuItems
                     .map<DropdownMenuItem<String>>((String value) {
                   return DropdownMenuItem<String>(
                     value: value,
-                    child: SizedBox(
-                      //width: 150,
-                      child: Text(value, textAlign: TextAlign.center,)),
+                    child: Text(value, textAlign: TextAlign.center,)
                   );
                 }).toList(),
               ),
-          ),
-      ],
-    );
+          );
+      
+    
     
   }
 }
