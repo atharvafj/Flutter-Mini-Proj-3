@@ -1,5 +1,6 @@
 //main file.
 //leads to home which os dropdownScreen
+import 'package:Proj_3/Equipment_Info_Screen.dart';
 import 'package:flutter/material.dart';
 import './dropdownScreen.dart';
 
@@ -19,6 +20,9 @@ class MyApp extends StatelessWidget {
         textTheme: ThemeData.light().textTheme.copyWith(),
       ),
       home: DropdownScreen(),
+      routes: {
+        EquipmentInfoScreen.routeName: (ctx)=> EquipmentInfoScreen(),
+      },
     );
   }
 }

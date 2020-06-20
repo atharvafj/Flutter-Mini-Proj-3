@@ -16,6 +16,8 @@ class DropdownScreen extends StatelessWidget {
           .map(
             (item) => EquipmentDisplay(
               title: item.title,
+              imageUrl: item.imageUrl,
+              description: item.description,
             ),
           )
           .toList(),
