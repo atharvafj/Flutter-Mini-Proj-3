@@ -12,7 +12,7 @@ class _TabsScreenState extends State<TabsScreen> {
   final List<Widget> pages=[
     DropdownScreen(),
     SearchScreen(),
-    MediaPlayerScreen()
+    ChewieDemo()
   ];
   int selectedPageIndex=0;
   void selectPage(int index){
