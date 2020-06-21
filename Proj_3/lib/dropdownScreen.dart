@@ -2,8 +2,39 @@
 import 'package:flutter/material.dart';
 import './DATA.dart';
 import './Equipment_Display.dart';
-import './DropdownWidget.dart';
-class DropdownScreen extends StatelessWidget {
+class DropdownScreen extends StatefulWidget {
+
+  @override
+  _DropdownScreenState createState() => _DropdownScreenState();
+}
+
+class _DropdownScreenState extends State<DropdownScreen> {
+  List<String> menuItems=[];
+  String selectedId;
+  List<EquipmentItem> availableEquip;
+  void initState(){
+    for (int i=0;i<Categories.length;i++)
+    {
+      menuItems.add(Categories[i].title);
+      //print(menuItems);
+    }
+    selectedId="All";
+    availableEquip=equipments;
+    super.initState();
+    }
+    
+    String valreq;
+    void getval(String newValue){
+      setState(() {
+        dropdownValue=newValue;
+        valreq=dropdownValue;
+        selectedId=Categories.firstWhere((cat)=>cat.title.contains(valreq)).id;
+        availableEquip=equipments.where((item)=>item.categoryId.contains(selectedId)).toList();
+      });  
+    }
+  String dropdownValue="All";
+   
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,11 +45,34 @@ class DropdownScreen extends StatelessWidget {
         height: 450,
         child: Column(
           children: <Widget>[
-            DropdownWidget(),
+            Container(
+          //width: double.infinity,
+          child: DropdownButton<String>(
+                value: dropdownValue,
+                icon: Icon(Icons.arrow_downward),
+                isExpanded: true,
+                iconSize: 24,
+                elevation: 16,
+                style: TextStyle(color: Colors.deepPurple),
+                
+                underline: Container(
+                  height: 2,
+                  color: Colors.deepPurpleAccent,
+                ),
+                onChanged: getval,
+                items: menuItems
+                    .map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value, textAlign: TextAlign.center,)
+                  );
+                }).toList(),
+              ),
+          ),
             GridView(
               shrinkWrap: true,
             padding: const EdgeInsets.all(25),
-            children: equipments
+            children: availableEquip
                 .map(
                   (item) => EquipmentDisplay(
                     title: item.title,
