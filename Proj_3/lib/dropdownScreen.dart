@@ -33,6 +33,28 @@ class _DropdownScreenState extends State<DropdownScreen> {
       });  
     }
   String dropdownValue="All";
+  Widget displayer(int length){
+    if(length!=0){return GridView(
+              shrinkWrap: true,
+            padding: const EdgeInsets.all(25),
+            children: availableEquip
+                .map(
+                  (item) => EquipmentDisplay(
+                    title: item.title,
+                    imageUrl: item.imageUrl,
+                    description: item.description,
+                  ),
+                )
+                .toList(),
+            gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+              maxCrossAxisExtent: 200,
+              childAspectRatio: 5 / 2,
+              crossAxisSpacing: 20,
+              mainAxisSpacing: 20,
+            ),
+    );}
+    else {return Center(child: Text("Nothing to show here!"),);}
+  }
    
 
   @override
@@ -69,7 +91,8 @@ class _DropdownScreenState extends State<DropdownScreen> {
                 }).toList(),
               ),
           ),
-            GridView(
+          displayer(availableEquip.length)
+            /*GridView(
               shrinkWrap: true,
             padding: const EdgeInsets.all(25),
             children: availableEquip
@@ -87,7 +110,7 @@ class _DropdownScreenState extends State<DropdownScreen> {
               crossAxisSpacing: 20,
               mainAxisSpacing: 20,
             ),
-    ),
+    ),*/
           ],
         ),
       ),
