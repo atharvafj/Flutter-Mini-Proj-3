@@ -1,7 +1,7 @@
 //tabs screen to display 3 different tabs
-import 'package:Proj_3/dropdownScreen.dart';
-import 'package:Proj_3/mediaPlayerScreen.dart';
-import 'package:Proj_3/searchScreen.dart';
+import './dropdownScreen.dart';
+import './mediaPlayerScreen.dart';
+import './searchScreen.dart';
 import 'package:flutter/material.dart';
 class TabsScreen extends StatefulWidget {
   @override

@@ -1,7 +1,7 @@
 //main file.
 //leads to home which os dropdownScreen
-import 'package:Proj_3/Equipment_Info_Screen.dart';
-import 'package:Proj_3/Tabs_Screen.dart';
+import './Screens/Equipment_Info_Screen.dart';
+import './Screens/Tabs_Screen.dart';
 import 'package:flutter/material.dart';
 
 

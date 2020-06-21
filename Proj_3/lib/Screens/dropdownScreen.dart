@@ -1,7 +1,7 @@
 //items will be displayed on basis of dropdown widget
 import 'package:flutter/material.dart';
-import './DATA.dart';
-import './Equipment_Display.dart';
+import '../DATA.dart';
+import '../Widgets/Equipment_Display.dart';
 class DropdownScreen extends StatefulWidget {
 
   @override

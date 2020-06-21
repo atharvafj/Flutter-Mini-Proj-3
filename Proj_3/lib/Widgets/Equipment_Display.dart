@@ -1,6 +1,6 @@
 //How each equipment will be displayed on dropdownScreen
 import 'package:flutter/material.dart';
-import './Equipment_Info_Screen.dart';
+import '../Screens/Equipment_Info_Screen.dart';
 class EquipmentDisplay extends StatelessWidget {
   final String title;
   final List<String> imageUrl;
