@@ -4,7 +4,6 @@ import './Screens/Equipment_Info_Screen.dart';
 import './Screens/Tabs_Screen.dart';
 import 'package:flutter/material.dart';
 
-
 void main() {
   runApp(MyApp());
 }
@@ -22,7 +21,7 @@ class MyApp extends StatelessWidget {
       ),*/
       home: TabsScreen(),
       routes: {
-        EquipmentInfoScreen.routeName: (ctx)=> EquipmentInfoScreen(),
+        EquipmentInfoScreen.routeName: (ctx) => EquipmentInfoScreen(),
       },
     );
   }

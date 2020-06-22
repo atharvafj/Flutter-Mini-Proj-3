@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:chewie/chewie.dart';
 //import 'package:chewie/src/chewie_player.dart';
 import 'package:video_player/video_player.dart';
+
 class ChewieDemo extends StatefulWidget {
   ChewieDemo({this.title = 'Media Player'});
 
@@ -28,12 +29,12 @@ class _ChewieDemoState extends State<ChewieDemo> {
         'https://www.sample-videos.com/video123/mp4/480/asdasdas.mp4');
     _chewieController = ChewieController(
       videoPlayerController: _videoPlayerController1,
-      aspectRatio: 3 / 2,
-      autoPlay: false,
-      looping: true,
+      aspectRatio: 16 / 9,
+      autoPlay: true,
+      looping: false,
       // Try playing around with some of these other options:
 
-      // showControls: false,
+      showControls: true,
       // materialProgressColors: ChewieProgressColors(
       //   playedColor: Colors.red,
       //   handleColor: Colors.blue,
@@ -46,6 +47,7 @@ class _ChewieDemoState extends State<ChewieDemo> {
       // autoInitialize: true,
     );
   }
+
   @override
   void dispose() {
     _videoPlayerController1.dispose();
@@ -81,7 +83,7 @@ class _ChewieDemoState extends State<ChewieDemo> {
               },
               child: Text('Fullscreen'),
             ),
-            Row(
+            /*Row(
               children: <Widget>[
                 Expanded(
                   child: FlatButton(
@@ -156,7 +158,7 @@ class _ChewieDemoState extends State<ChewieDemo> {
                   ),
                 )
               ],
-            )
+            )*/
           ],
         ),
       ),

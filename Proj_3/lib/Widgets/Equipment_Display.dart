@@ -1,38 +1,51 @@
 //How each equipment will be displayed on dropdownScreen
 import 'package:flutter/material.dart';
 import '../Screens/Equipment_Info_Screen.dart';
+
 class EquipmentDisplay extends StatelessWidget {
   final String title;
   final List<String> imageUrl;
   final List<String> description;
   EquipmentDisplay({this.title, this.imageUrl, this.description});
 
-  void displayItemInfo(BuildContext ctx){
-    Navigator.of(ctx).pushNamed(EquipmentInfoScreen.routeName,
-    arguments: {
+  void displayItemInfo(BuildContext ctx) {
+    Navigator.of(ctx).pushNamed(EquipmentInfoScreen.routeName, arguments: {
       "title": title,
       //"imageUrl": imageUrl[0],
       //"description": description[0],
-    }
-    );
+    });
   }
+
   @override
   Widget build(BuildContext context) {
     return Material(
-          child: InkWell(
+      child: InkWell(
         onTap: () => displayItemInfo(context),
+        onLongPress: null,
         splashColor: Color.fromRGBO(237, 41, 57, 1),
         borderRadius: BorderRadius.circular(15),
         child: Container(
+          margin: EdgeInsets.all(5),
           padding: const EdgeInsets.all(15),
-          child: Center(
-            child: Text(
-              title, style: TextStyle(color: Colors.black, fontSize: 16),),
+          child: SingleChildScrollView(
+            child: Stack(
+              children: <Widget>[
+                Center(
+                  child: Text(
+                    title,
+                    style: TextStyle(color: Colors.black, fontSize: 16),
+                  ),
+                ),
+              ],
+            ),
           ),
           decoration: BoxDecoration(
             gradient: RadialGradient(
               center: const Alignment(0.7, -0.6),
-              colors: [Color.fromRGBO(173, 253, 162, 1), Color.fromRGBO(11, 211, 243, 1)],
+              colors: [
+                Color.fromRGBO(173, 253, 162, 1),
+                Color.fromRGBO(11, 211, 243, 1)
+              ],
               //begin: Alignment.topLeft,
               //end: Alignment.bottomRight,
               radius: 3.5,

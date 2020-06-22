@@ -1,16 +1,18 @@
 //This will be displayed after clicking on any equipment
 import 'package:Proj_3/DATA.dart';
 import 'package:flutter/material.dart';
+
 class EquipmentInfoScreen extends StatelessWidget {
   static const routeName = '/Equipment_Info_SCreen';
-   String title;
-   EquipmentItem item;
+  String title;
+  EquipmentItem item;
   //EquipmentInfoScreen(this.title, this.imageUrl, this.description); We are getting args from below
   Widget buildSectionTitle(BuildContext context, String text) {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 10),
       child: Text(
-        text, style: TextStyle(fontSize: 24),
+        text,
+        style: TextStyle(fontSize: 24),
       ),
     );
   }
@@ -29,14 +31,15 @@ class EquipmentInfoScreen extends StatelessWidget {
       child: child,
     );
   }
-  
+
   @override
   Widget build(BuildContext context) {
-    final routeArgs=ModalRoute.of(context).settings.arguments as Map<String, String>;
-    final title=routeArgs["title"];
+    final routeArgs =
+        ModalRoute.of(context).settings.arguments as Map<String, String>;
+    final title = routeArgs["title"];
     final item = equipments.firstWhere((it) {
-        return it.title==title;
-      });
+      return it.title == title;
+    });
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color.fromRGBO(46, 29, 78, 1),
@@ -46,7 +49,9 @@ class EquipmentInfoScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            SizedBox(height: 10,),
+            SizedBox(
+              height: 10,
+            ),
             Container(
               height: 250,
               width: double.infinity,
@@ -55,27 +60,29 @@ class EquipmentInfoScreen extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            SizedBox(width: 5,),
+            SizedBox(
+              width: 5,
+            ),
             buildSectionTitle(context, 'Description'),
             //buildContainer(
-              Container(
-                height: 300,
-                child: ListView.builder(
-                  itemBuilder: (ctx, index) => Card(
-                        color: Color.fromRGBO(178, 247, 239, 1),
-                        child: Padding(
-                            padding: EdgeInsets.symmetric(
-                              vertical: 5,
-                              horizontal: 10,
-                            ),
-                            child: Text(item.description[index],
-                            style: TextStyle(fontSize: 20),
-                            )
-                            ),
+            Container(
+              height: 300,
+              child: ListView.builder(
+                itemBuilder: (ctx, index) => Card(
+                  color: Color.fromRGBO(178, 247, 239, 1),
+                  child: Padding(
+                      padding: EdgeInsets.symmetric(
+                        vertical: 5,
+                        horizontal: 10,
                       ),
-                  itemCount: item.description.length,
+                      child: Text(
+                        item.description[index],
+                        style: TextStyle(fontSize: 20),
+                      )),
                 ),
+                itemCount: item.description.length,
               ),
+            ),
             //),
           ],
         ),

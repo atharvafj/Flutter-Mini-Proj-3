@@ -223,13 +223,13 @@ const SubCategories = const [
 class EquipmentItem with ChangeNotifier {
   @required
   final String title;
-  
+
   List<String> categoryId;
-  
+
   List<String> imageUrl;
-  
+
   List<String> description;
-  
+
   final String equipmentId;
 
   EquipmentItem(

@@ -3,23 +3,21 @@ import './dropdownScreen.dart';
 import './mediaPlayerScreen.dart';
 import './searchScreen.dart';
 import 'package:flutter/material.dart';
+
 class TabsScreen extends StatefulWidget {
   @override
   _TabsScreenState createState() => _TabsScreenState();
 }
 
 class _TabsScreenState extends State<TabsScreen> {
-  final List<Widget> pages=[
-    DropdownScreen(),
-    SearchScreen(),
-    ChewieDemo()
-  ];
-  int selectedPageIndex=0;
-  void selectPage(int index){
+  final List<Widget> pages = [DropdownScreen(), SearchScreen(), ChewieDemo()];
+  int selectedPageIndex = 0;
+  void selectPage(int index) {
     setState(() {
-      selectedPageIndex=index;
+      selectedPageIndex = index;
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,8 +31,10 @@ class _TabsScreenState extends State<TabsScreen> {
         currentIndex: selectedPageIndex,
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), title: Text("Home")),
-          BottomNavigationBarItem(icon: Icon(Icons.search), title: Text("Search")),
-          BottomNavigationBarItem(icon: Icon(Icons.music_video), title: Text("Media Player")),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.search), title: Text("Search")),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.music_video), title: Text("Media Player")),
         ],
       ),
     );
