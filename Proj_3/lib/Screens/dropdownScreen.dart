@@ -30,6 +30,7 @@ class _DropdownScreenState extends State<DropdownScreen> {
         valreq=dropdownValue;
         selectedId=Categories.firstWhere((cat)=>cat.title.contains(valreq)).id;
         availableEquip=equipments.where((item)=>item.categoryId.contains(selectedId)).toList();
+        if(valreq=="All"){availableEquip=equipments;}
       });  
     }
   String dropdownValue="All";
@@ -53,7 +54,7 @@ class _DropdownScreenState extends State<DropdownScreen> {
               mainAxisSpacing: 20,
             ),
     );}
-    else {return Center(child: Text("Nothing to show here!"),);}
+    else {return Center(child: Text("Nothing to show here!", style: TextStyle(fontSize: 20),),);}
   }
    
 
@@ -71,17 +72,18 @@ class _DropdownScreenState extends State<DropdownScreen> {
           children: <Widget>[
             Container(
           //width: double.infinity,
-          child: DropdownButton<String>(
+          child: DropdownButton<String>( 
+                dropdownColor: Colors.white,
                 value: dropdownValue,
                 icon: Icon(Icons.arrow_downward),
                 isExpanded: true,
                 iconSize: 24,
                 elevation: 16,
-                style: TextStyle(color: Colors.deepPurple),
+                style: TextStyle(color: Color.fromRGBO(46, 29, 78, 1), fontSize: 18),
                 
                 underline: Container(
                   height: 2,
-                  color: Colors.deepPurpleAccent,
+                  color: Color.fromRGBO(46, 29, 78, 1),
                 ),
                 onChanged: getval,
                 items: menuItems

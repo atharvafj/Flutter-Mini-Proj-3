@@ -32,7 +32,7 @@ class EquipmentDisplay extends StatelessWidget {
           decoration: BoxDecoration(
             gradient: RadialGradient(
               center: const Alignment(0.7, -0.6),
-              colors: [Color.fromRGBO(168, 218, 220, 1), Color.fromRGBO(09, 12, 155, 1)],
+              colors: [Color.fromRGBO(173, 253, 162, 1), Color.fromRGBO(11, 211, 243, 1)],
               //begin: Alignment.topLeft,
               //end: Alignment.bottomRight,
               radius: 3.5,
