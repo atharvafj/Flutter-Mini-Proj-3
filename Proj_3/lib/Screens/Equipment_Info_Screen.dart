@@ -10,8 +10,7 @@ class EquipmentInfoScreen extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 10),
       child: Text(
-        text,
-        style: Theme.of(context).textTheme.headline6,
+        text, style: TextStyle(fontSize: 24),
       ),
     );
   }
@@ -47,29 +46,37 @@ class EquipmentInfoScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
+            SizedBox(height: 10,),
             Container(
-              height: 200,
+              height: 250,
               width: double.infinity,
               child: Image.network(
                 item.imageUrl[0],
                 fit: BoxFit.cover,
               ),
             ),
-            buildSectionTitle(context, 'Desccription'),
-            buildContainer(
-              ListView.builder(
-                itemBuilder: (ctx, index) => Card(
-                      color: Theme.of(context).accentColor,
-                      child: Padding(
-                          padding: EdgeInsets.symmetric(
-                            vertical: 5,
-                            horizontal: 10,
-                          ),
-                          child: Text(item.description[index])),
-                    ),
-                itemCount: item.description.length,
+            SizedBox(width: 5,),
+            buildSectionTitle(context, 'Description'),
+            //buildContainer(
+              Container(
+                height: 300,
+                child: ListView.builder(
+                  itemBuilder: (ctx, index) => Card(
+                        color: Color.fromRGBO(178, 247, 239, 1),
+                        child: Padding(
+                            padding: EdgeInsets.symmetric(
+                              vertical: 5,
+                              horizontal: 10,
+                            ),
+                            child: Text(item.description[index],
+                            style: TextStyle(fontSize: 20),
+                            )
+                            ),
+                      ),
+                  itemCount: item.description.length,
+                ),
               ),
-            ),
+            //),
           ],
         ),
       ),

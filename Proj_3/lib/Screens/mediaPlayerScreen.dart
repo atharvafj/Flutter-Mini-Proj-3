@@ -3,7 +3,7 @@ import 'package:chewie/chewie.dart';
 //import 'package:chewie/src/chewie_player.dart';
 import 'package:video_player/video_player.dart';
 class ChewieDemo extends StatefulWidget {
-  ChewieDemo({this.title = 'Chewie Demo'});
+  ChewieDemo({this.title = 'Media Player'});
 
   final String title;
 
@@ -29,7 +29,7 @@ class _ChewieDemoState extends State<ChewieDemo> {
     _chewieController = ChewieController(
       videoPlayerController: _videoPlayerController1,
       aspectRatio: 3 / 2,
-      autoPlay: true,
+      autoPlay: false,
       looping: true,
       // Try playing around with some of these other options:
 
@@ -93,7 +93,7 @@ class _ChewieDemoState extends State<ChewieDemo> {
                         _chewieController = ChewieController(
                           videoPlayerController: _videoPlayerController1,
                           aspectRatio: 3 / 2,
-                          autoPlay: true,
+                          autoPlay: false,
                           looping: true,
                         );
                       });
@@ -114,7 +114,7 @@ class _ChewieDemoState extends State<ChewieDemo> {
                         _chewieController = ChewieController(
                           videoPlayerController: _videoPlayerController2,
                           aspectRatio: 3 / 2,
-                          autoPlay: true,
+                          autoPlay: false,
                           looping: true,
                         );
                       });

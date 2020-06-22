@@ -13,13 +13,14 @@ class SearchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: Color.fromRGBO(46, 29, 78, 1),),
+      //appBar: AppBar(backgroundColor: Color.fromRGBO(46, 29, 78, 1),),
+      
       backgroundColor: Color.fromRGBO(241, 250, 238, 1),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: SearchBar(
-            iconActiveColor: Colors.black,
+            iconActiveColor: Color.fromRGBO(46, 29, 78, 1),
             onSearch: search, 
             onItemFound: (EquipmentItem found, int _)
             {
