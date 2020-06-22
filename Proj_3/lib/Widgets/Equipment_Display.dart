@@ -18,23 +18,27 @@ class EquipmentDisplay extends StatelessWidget {
   }
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () => displayItemInfo(context),
-      splashColor: Theme.of(context).primaryColor,
-      borderRadius: BorderRadius.circular(15),
-      child: Container(
-        padding: const EdgeInsets.all(15),
-        child: Center(
-          child: Text(
-            title, style: TextStyle(color: Colors.black, fontSize: 16),),
-        ),
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Colors.white, Colors.amber],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
+    return Material(
+          child: InkWell(
+        onTap: () => displayItemInfo(context),
+        splashColor: Color.fromRGBO(237, 41, 57, 1),
+        borderRadius: BorderRadius.circular(15),
+        child: Container(
+          padding: const EdgeInsets.all(15),
+          child: Center(
+            child: Text(
+              title, style: TextStyle(color: Colors.black, fontSize: 16),),
           ),
-          borderRadius: BorderRadius.circular(15),
+          decoration: BoxDecoration(
+            gradient: RadialGradient(
+              center: const Alignment(0.7, -0.6),
+              colors: [Color.fromRGBO(168, 218, 220, 1), Color.fromRGBO(09, 12, 155, 1)],
+              //begin: Alignment.topLeft,
+              //end: Alignment.bottomRight,
+              radius: 3.5,
+            ),
+            borderRadius: BorderRadius.circular(15),
+          ),
         ),
       ),
     );

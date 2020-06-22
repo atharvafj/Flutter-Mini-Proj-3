@@ -40,8 +40,10 @@ class EquipmentInfoScreen extends StatelessWidget {
       });
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color.fromRGBO(46, 29, 78, 1),
         title: Text(item.title),
       ),
+      backgroundColor: Color.fromRGBO(241, 250, 238, 1),
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[

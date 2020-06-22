@@ -26,10 +26,10 @@ class _TabsScreenState extends State<TabsScreen> {
       //appBar: AppBar(),
       body: pages[selectedPageIndex],
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.orange[700],
+        backgroundColor: Color.fromRGBO(168, 218, 220, 1),
         onTap: selectPage,
-        selectedItemColor: Colors.purple,
-        unselectedItemColor: Colors.yellowAccent,
+        selectedItemColor: Color.fromRGBO(14, 25, 61, 1),
+        unselectedItemColor: Color.fromRGBO(45, 123, 157, 1),
         currentIndex: selectedPageIndex,
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), title: Text("Home")),

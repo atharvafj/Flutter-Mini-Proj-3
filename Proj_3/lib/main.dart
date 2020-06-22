@@ -14,12 +14,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Inventory App",
-      theme: ThemeData(
+      /*theme: ThemeData(
         primarySwatch: Colors.purple,
         accentColor: Colors.greenAccent,
         canvasColor: Colors.yellow,
         textTheme: ThemeData.light().textTheme.copyWith(),
-      ),
+      ),*/
       home: TabsScreen(),
       routes: {
         EquipmentInfoScreen.routeName: (ctx)=> EquipmentInfoScreen(),

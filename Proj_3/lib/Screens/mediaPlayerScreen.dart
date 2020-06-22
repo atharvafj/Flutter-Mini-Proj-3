@@ -62,8 +62,10 @@ class _ChewieDemoState extends State<ChewieDemo> {
       ),
       home: Scaffold(
         appBar: AppBar(
+          backgroundColor: Color.fromRGBO(46, 29, 78, 1),
           title: Text(widget.title),
         ),
+        backgroundColor: Color.fromRGBO(241, 250, 238, 1),
         body: Column(
           children: <Widget>[
             Expanded(

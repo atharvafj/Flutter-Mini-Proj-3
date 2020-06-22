@@ -61,8 +61,10 @@ class _DropdownScreenState extends State<DropdownScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color.fromRGBO(46, 29, 78, 1),
         title: Text("Inventory Manager"),
       ),
+      backgroundColor: Color.fromRGBO(241, 250, 238, 1),
       body: Container(
         height: 450,
         child: Column(
