@@ -111,7 +111,7 @@ class _DropdownScreenState extends State<DropdownScreen> {
                   }).toList(),
                 ),
               ),
-              displayer(availableEquip.length)
+              SingleChildScrollView(child: displayer(availableEquip.length)),
               /*GridView(
                 shrinkWrap: true,
               padding: const EdgeInsets.all(25),

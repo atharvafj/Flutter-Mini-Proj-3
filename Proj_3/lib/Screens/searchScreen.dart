@@ -4,12 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flappy_search_bar/flappy_search_bar.dart';
 import '../DATA.dart';
 
+
 class SearchScreen extends StatelessWidget {
   Future<List<EquipmentItem>> search(String search) async {
     await Future.delayed(Duration(seconds: 1));
     //return List.generate(search.length, (int index) {
     return equipments
-        .where((item) => item.title.toLowerCase().contains(search))
+        .where(
+            (item) => item.title.toLowerCase().contains(search.toLowerCase()))
         .toList();
   }
 
