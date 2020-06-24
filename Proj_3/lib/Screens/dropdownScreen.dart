@@ -79,40 +79,41 @@ class _DropdownScreenState extends State<DropdownScreen> {
         title: Text("Inventory Manager"),
       ),
       backgroundColor: Color.fromRGBO(241, 250, 238, 1),
-      body: SingleChildScrollView(
+      body:
+          /*SingleChildScrollView(
         child: Container(
           height: 450,
-          child: Column(
-            children: <Widget>[
-              Container(
-                //width: double.infinity,
-                child: DropdownButton<String>(
-                  dropdownColor: Colors.white,
-                  value: dropdownValue,
-                  icon: Icon(Icons.arrow_downward),
-                  isExpanded: true,
-                  iconSize: 24,
-                  elevation: 16,
-                  style: TextStyle(
-                      color: Color.fromRGBO(46, 29, 78, 1), fontSize: 18),
-                  underline: Container(
-                    height: 2,
-                    color: Color.fromRGBO(46, 29, 78, 1),
-                  ),
-                  onChanged: getval,
-                  items:
-                      menuItems.map<DropdownMenuItem<String>>((String value) {
-                    return DropdownMenuItem<String>(
-                        value: value,
-                        child: Text(
-                          value,
-                          textAlign: TextAlign.center,
-                        ));
-                  }).toList(),
-                ),
+          child:*/
+          Column(
+        children: <Widget>[
+          Container(
+            //width: double.infinity,
+            child: DropdownButton<String>(
+              dropdownColor: Colors.white,
+              value: dropdownValue,
+              icon: Icon(Icons.arrow_downward),
+              isExpanded: true,
+              iconSize: 24,
+              elevation: 16,
+              style:
+                  TextStyle(color: Color.fromRGBO(46, 29, 78, 1), fontSize: 18),
+              underline: Container(
+                height: 2,
+                color: Color.fromRGBO(46, 29, 78, 1),
               ),
-              SingleChildScrollView(child: displayer(availableEquip.length)),
-              /*GridView(
+              onChanged: getval,
+              items: menuItems.map<DropdownMenuItem<String>>((String value) {
+                return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(
+                      value,
+                      textAlign: TextAlign.center,
+                    ));
+              }).toList(),
+            ),
+          ),
+          Expanded(child: displayer(availableEquip.length)),
+          /*GridView(
                 shrinkWrap: true,
               padding: const EdgeInsets.all(25),
               children: availableEquip
@@ -130,11 +131,11 @@ class _DropdownScreenState extends State<DropdownScreen> {
                 crossAxisSpacing: 20,
                 mainAxisSpacing: 20,
               ),
-    ),*/
-            ],
-          ),
-        ),
+     ),*/
+        ],
       ),
+      //),
+      //),
     );
   }
 }
