@@ -57,8 +57,8 @@ class _DropdownScreenState extends State<DropdownScreen> {
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 200,
           childAspectRatio: 5 / 3,
-          crossAxisSpacing: 20,
-          mainAxisSpacing: 20,
+          crossAxisSpacing: 0,
+          mainAxisSpacing: 0,
         ),
       );
     } else {
