@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flappy_search_bar/flappy_search_bar.dart';
 import '../DATA.dart';
 
-
 class SearchScreen extends StatelessWidget {
   Future<List<EquipmentItem>> search(String search) async {
     await Future.delayed(Duration(seconds: 1));
@@ -24,18 +23,23 @@ class SearchScreen extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: SearchBar(
-              iconActiveColor: Color.fromRGBO(46, 29, 78, 1),
-              onSearch: search,
-              onItemFound: (EquipmentItem found, int _) {
-                return SingleChildScrollView(
-                  child: EquipmentDisplay(
-                    title: found.title,
-                    imageUrl: found.imageUrl,
-                    description: found.description,
-                  ),
-                );
-              }),
+          child: GestureDetector(
+            onTap: () {
+              FocusScope.of(context).requestFocus(new FocusNode());
+            },
+            child: SearchBar(
+                iconActiveColor: Color.fromRGBO(46, 29, 78, 1),
+                onSearch: search,
+                onItemFound: (EquipmentItem found, int _) {
+                  return SingleChildScrollView(
+                    child: EquipmentDisplay(
+                      title: found.title,
+                      imageUrl: found.imageUrl,
+                      description: found.description,
+                    ),
+                  );
+                }),
+          ),
         ),
       ),
     );

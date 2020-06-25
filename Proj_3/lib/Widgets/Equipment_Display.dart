@@ -84,7 +84,8 @@ class _EquipmentDisplayState extends State<EquipmentDisplay> {
             ),
           ),
           AnimatedContainer(
-            duration: Duration(seconds: 1),
+            curve: Curves.bounceIn,
+            duration: Duration(seconds: 5),
             child: Image.network(
               widget.imageUrl[0],
               height: h,
