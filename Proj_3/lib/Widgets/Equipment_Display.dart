@@ -28,7 +28,7 @@ class _EquipmentDisplayState extends State<EquipmentDisplay> {
   void animator() {
     setState(() {
       h = 250;
-      w = 250;
+      w = double.infinity;
     });
   }
 
