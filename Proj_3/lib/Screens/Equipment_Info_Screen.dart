@@ -53,11 +53,22 @@ class EquipmentInfoScreen extends StatelessWidget {
               height: 10,
             ),
             Container(
-              height: 250,
-              width: double.infinity,
-              child: Image.network(
-                item.imageUrl[0],
-                fit: BoxFit.cover,
+              margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
+              height: 250.0,
+              width: 250.0,
+              child: Hero(
+                tag: title,
+                child: Image.network(
+                  item.imageUrl[0],
+                  fit: BoxFit.cover,
+                ),
+                placeholderBuilder: (context, _, widget) {
+                  return Container(
+                    height: 250.0,
+                    width: 250.0,
+                    child: CircularProgressIndicator(),
+                  );
+                },
               ),
             ),
             SizedBox(

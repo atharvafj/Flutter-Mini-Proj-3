@@ -41,7 +41,7 @@ class _DropdownScreenState extends State<DropdownScreen> {
   String dropdownValue = "All";
   Widget displayer(int length) {
     if (length != 0) {
-      return GridView(
+      return ListView(
         scrollDirection: Axis.vertical,
         shrinkWrap: true,
         padding: const EdgeInsets.all(25),
@@ -54,12 +54,12 @@ class _DropdownScreenState extends State<DropdownScreen> {
               ),
             )
             .toList(),
-        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+        /*gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 200,
           childAspectRatio: 5 / 3,
           crossAxisSpacing: 0,
           mainAxisSpacing: 0,
-        ),
+        ),*/
       );
     } else {
       return Center(

@@ -25,7 +25,7 @@ class _EquipmentDisplayState extends State<EquipmentDisplay> {
 
   double w = 0;
 
-  void animator() {
+  /*void animator() {
     setState(() {
       h = 250;
       w = double.infinity;
@@ -37,63 +37,55 @@ class _EquipmentDisplayState extends State<EquipmentDisplay> {
       h = 0;
       w = 0;
     });
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: Stack(
-        children: <Widget>[
-          //Image.network(imageUrl[0]),
-          GestureDetector(
-            onLongPress: animator,
-            onLongPressUp: stopAnimation,
-            child: InkWell(
-              onTap: () => displayItemInfo(context),
-              splashColor: Colors.indigo[900],
-              borderRadius: BorderRadius.circular(15),
+    return InkWell(
+      onTap: () => displayItemInfo(context),
+      child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15),
+        ),
+        elevation: 4,
+        margin: EdgeInsets.all(10),
+        child: Row(
+          children: <Widget>[
+            /*ClipRRect(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(15),
+                topRight: Radius.circular(15),
+              ),
+              child:*/
+            Hero(tag: widget.title, child: Icon(Icons.info)),
+            SizedBox(
+              width: 5,
+            ),
+            Text(widget.title),
+            /*),
+            Positioned(
+              bottom: 20,
+              right: 10,
               child: Container(
-                margin: EdgeInsets.all(5),
-                padding: const EdgeInsets.all(15),
-                child: SingleChildScrollView(
-                  child: Stack(
-                    children: <Widget>[
-                      Center(
-                        child: Text(
-                          widget.title,
-                          style: TextStyle(color: Colors.black, fontSize: 16),
-                        ),
-                      ),
-                    ],
-                  ),
+                width: 300,
+                color: Colors.black54,
+                padding: EdgeInsets.symmetric(
+                  vertical: 5,
+                  horizontal: 20,
                 ),
-                decoration: BoxDecoration(
-                  gradient: RadialGradient(
-                    center: const Alignment(0.7, -0.6),
-                    colors: [
-                      Color.fromRGBO(173, 253, 162, 1),
-                      Color.fromRGBO(11, 211, 243, 1)
-                    ],
-                    //begin: Alignment.topLeft,
-                    //end: Alignment.bottomRight,
-                    radius: 3.5,
+                child: Text(
+                  widget.title,
+                  style: TextStyle(
+                    fontSize: 26,
+                    color: Colors.white,
                   ),
-                  borderRadius: BorderRadius.circular(15),
+                  softWrap: true,
+                  overflow: TextOverflow.fade,
                 ),
               ),
-            ),
-          ),
-          AnimatedContainer(
-            curve: Curves.bounceIn,
-            duration: Duration(seconds: 5),
-            child: Image.network(
-              widget.imageUrl[0],
-              height: h,
-              width: w,
-            ),
-            decoration: BoxDecoration(color: Colors.white),
-          ),
-        ],
+            )*/
+          ],
+        ),
       ),
     );
   }
